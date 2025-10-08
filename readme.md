@@ -16,6 +16,7 @@ A computer vision-based coin detection and counting system with both CLI and GUI
   - Pie chart showing coin distribution
 - **Adjustable Parameters**: Fine-tune detection for different lighting and backgrounds
 
+Check the demo usage video of the program [here](https://github.com/mhr-isham/Coin-Counter/blob/main/Demo%20Usage.mkv)
 ## Requirements
 
 ```bash
@@ -38,7 +39,27 @@ pip install opencv-python numpy matplotlib pillow
 ```bash
 pip install opencv-python numpy matplotlib pillow
 ```
+### You can also install it as python package:
+```bash
+pip install coin-counter
+```
+or download the wheel file and
+```bash
+pip install coin_counter-2.0.0-py3-none-any.whl
+```
 
+options:
+```bash
+usage: coin-counter [-h] [--cli] [--gui]
+        coin-counter-gui
+        coin-counter-cli
+
+  -h, --help  show help message and exit
+  --cli       Run CLI version  {alternative: coin-counter-cli}
+  --gui       Run GUI version  {alternative: coin-counter-gui}
+```
+
+Refer to the package site [here](https://pypi.org/project/coin-counter/2.0.0/)
 ## Usage
 
 ### GUI Version
@@ -69,10 +90,17 @@ python coin_counter_gui.py
 ### CLI Version
 
 #### Register a Reference Coin
-
+Example:
 ```bash
 python coin_counter_cli.py register --label Quarter --value 0.25 \
   --front quarter_front.jpg --back quarter_back.jpg
+```
+
+or, if you installed as a python package:
+
+```bash
+
+  coin-counter-cli register --label Quarter --value 0.25 --front  quarter_front.jpg --back quarter_back.jpg
 ```
 
 #### Detect Coins Using Hough Method
@@ -81,12 +109,22 @@ python coin_counter_cli.py register --label Quarter --value 0.25 \
 python coin_counter_cli.py detect --scene coins.jpg --method hough \
   --min_radius 10 --max_radius 150 --param2 30
 ```
+or, if you installed as a python package:
+
+```bash
+
+  coin-counter-cli detect --scene coins.jpg --method hough --min_radius 10 --max_radius 150 --param2 30
+```
 
 #### Detect Coins Using Contour Method
 
 ```bash
 python coin_counter.py detect --scene coins.jpg --method contour \
   --min_area 1000 --max_area 30000 --circularity 0.6
+```
+or, if you installed as a python package:
+```bash
+  coin-counter-cli detect --scene coins.jpg --method contour --min_area 1000 --max_area 30000 --circularity 0.6
 ```
 
 ## Detection Methods
@@ -123,20 +161,6 @@ Uses multiple thresholding methods:
 - `--match_threshold`: Minimum ORB feature matches required for identification (default: 8)
   - Increase for stricter matching (fewer false positives)
   - Decrease for more lenient matching (better for poor quality images)
-
-## File Structure
-
-```
-coin_counter/
-├── coin_counter.py          # CLI version
-├── coin_counter_gui.py      # GUI version
-├── README.md                # This file
-└── refs/                    # Reference coin images (auto-created)
-    ├── metadata.json        # Coin information database
-    ├── Quarter_front.jpg
-    ├── Quarter_back.jpg
-    └── ...
-```
 
 ## Tips for Best Results
 
@@ -224,5 +248,6 @@ coin_counter/
 Feel free to submit issues or pull requests to improve the application.
 
 ## Acknowledgments
+
 
 Built using OpenCV's computer vision algorithms and ORB feature detection.
