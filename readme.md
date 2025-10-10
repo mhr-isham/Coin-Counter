@@ -16,7 +16,11 @@ A computer vision-based coin detection and counting system with both CLI and GUI
   - Pie chart showing coin distribution
 - **Adjustable Parameters**: Fine-tune detection for different lighting and backgrounds
 
-Check the demo usage video of the program [here](https://github.com/mhr-isham/Coin-Counter/blob/main/Demo%20Usage.mkv)
+###  Demo
+Watch the project in action:
+
+https://github.com/mhr-isham/Coin-Counter/blob/main/Demo%20Usage.mp4
+
 ## Requirements
 
 ```bash
@@ -251,3 +255,4 @@ Feel free to submit issues or pull requests to improve the application.
 
 
 Built using OpenCV's computer vision algorithms and ORB feature detection.
+
