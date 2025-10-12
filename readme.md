@@ -104,38 +104,38 @@ python coin_counter_gui.py
 Example:
 ```bash
 python coin_counter_cli.py register --label Quarter --value 0.25 \
-  --front quarter_front.jpg --back quarter_back.jpg
+  --front [path_to_coin_front_side_image] --back [path_to_coin_back_side_image]
 ```
 
 or, if you installed as a python package:
 
 ```bash
 
-  coin-counter-cli register --label Quarter --value 0.25 --front  quarter_front.jpg --back quarter_back.jpg
+  coin-counter-cli register --label Quarter --value 0.25 --front  [path_to_coin_front_side_image] --back [path_to_coin_back_side_image]
 ```
 
 #### Detect Coins Using Hough Method
 
 ```bash
-python coin_counter_cli.py detect --scene coins.jpg --method hough \
+python coin_counter_cli.py detect --scene [path_to_scene_image] --method hough \
   --min_radius 10 --max_radius 150 --param2 30
 ```
 or, if you installed as a python package:
 
 ```bash
 
-  coin-counter-cli detect --scene coins.jpg --method hough --min_radius 10 --max_radius 150 --param2 30
+  coin-counter-cli detect --scene [path_to_coin_scene_image] --method hough --min_radius 10 --max_radius 150 --param2 30
 ```
 
 #### Detect Coins Using Contour Method
 
 ```bash
-python coin_counter.py detect --scene coins.jpg --method contour \
+python coin_counter.py detect --scene [path_to_coin_scene_image] --method contour \
   --min_area 1000 --max_area 30000 --circularity 0.6
 ```
 or, if you installed as a python package:
 ```bash
-  coin-counter-cli detect --scene coins.jpg --method contour --min_area 1000 --max_area 30000 --circularity 0.6
+  coin-counter-cli detect --scene [path_to_coin_scene_image] --method contour --min_area 1000 --max_area 30000 --circularity 0.6
 ```
 
 ## Detection Methods
@@ -262,6 +262,7 @@ Feel free to submit issues or pull requests to improve the application.
 
 
 Built using OpenCV's computer vision algorithms and ORB feature detection.
+
 
 
 
